@@ -1,0 +1,154 @@
+<head>
+    
+    <style>
+        /* Reset */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            padding: 0 ;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #3B1C32;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Section */
+        .container {
+            max-width: 100%;
+            /* margin: 20px auto; */
+            /* padding: 20px; */
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .heading {
+            /* font-size: 32px; */
+            color: rgb(133, 130, 130);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .subheading {
+            font-size: 20px;
+            color: #555;
+            /* margin-bottom: 20px; */
+            text-align: center;
+        }
+
+        .project {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project-card {
+            background-color: #A64D79;
+            color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 30px;
+            font-weight: bold;
+            
+            /* margin-bottom: 10px; */
+            background: linear-gradient(180deg, #062c5e, #0d4d6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-description {
+            background-color: #A64D79;
+            font-size: 20px;
+            color: black;
+            /* margin-bottom: 15px; */
+            line-height: 1.5;
+        }
+
+        .project-link {
+            display: inline-block;
+            /* margin-top: 10px; */
+            padding: 8px 12px;
+            background-color: #f4f4f9;
+            color: #3B1C32;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            background-color: #fff;
+            color: #3B1C32;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="" >
+    <!-- Sticky Header -->
+    <!-- <div class="h3 p-1 m-0" style="background-color: #1A1A1D">
+        <div class="heading">
+            Projects
+        </div>
+    </div> -->
+
+    <!-- Main Content -->
+    <div class="container p-0">
+        <div class="h3 p-1 m-0" style="background-color:#3B1C32; position: sticky; top: 0; z-index: 1000;">
+            <div class="heading h3 m-0 p-3">Projects Portfolio</div>
+        </div>
+        
+        <div class="subheading m-0 p-5" style="font-size: 40px; color: rgb(170, 170, 170);">A showcase of my work and achievements</div>
+
+        <div class="project m-0 p-0">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-title">Shopping Website</div>
+                <div class="project-description">
+                    A fully functional e-commerce website developed using React. Features include a dynamic product list, shopping cart, and user authentication.
+                </div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-title">Bus Tracking System</div>
+                <div class="project-description">
+                    Designed a student tracking system using Arduino Nano and RFID technology to ensure school bus safety and provide real-time updates to parents.
+                </div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-title">Data Visualization Dashboard</div>
+                <div class="project-description">
+                    Created an interactive data visualization dashboard using Blazor and ApexCharts to display real-time analytics for business operations.
+                </div>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </div>
+    </div>
+</body>

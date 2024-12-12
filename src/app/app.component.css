@@ -1,0 +1,17 @@
+.navigations{
+    padding: 20px;
+    background-color: #3B1C32;
+    height: 60px;
+    border-bottom-left-radius: 25px;
+}
+a{
+    background-color: #3B1C32;
+    text-decoration: none;
+    color: aliceblue;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
