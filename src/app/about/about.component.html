@@ -1,90 +1,157 @@
-<link
+<!-- <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-/>
+/> -->
+
+<div class="h3 p-1 m-0" style="background-color: #1a1a1d00; position: sticky; top: 0; z-index: 1000;">
+  <div class="heading" style="color: rgb(133, 130, 130);">
+    Education
+  </div>
+</div>
 
 <section id="education" class="container my-5">
-    <h2 class="text-center mb-4">Education</h2>
-    <div class="timeline">
-      <!-- Bachelor's Timeline Card -->
-      <div class="timeline-card">
-        <div class="timeline-icon">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <div class="timeline-content">
-          <h3>Bachelor of Engineering in Electronics and Communication</h3>
-          <p class="institution">Nellai College of Engineering ( Anna University )</p>
-          <p class="duration">2018 - 2022</p>
-          <p class="details">CGPA: 7.8/10</p>
-          <!-- Donut chart for Bachelor's -->
-          <!-- <canvas id="beChart"></canvas>  -->
-        </div>
+  <div class="timeline">
+    <!-- Bachelor's Timeline Card -->
+    <div class="timeline-card" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="timeline-icon">
+        <i class="fas fa-graduation-cap"></i>
       </div>
-  
-      <!-- HSC Timeline Card -->
-      <div class="timeline-card">
-        <div class="timeline-icon">
-          <i class="fas fa-school"></i>
-        </div>
-        <div class="timeline-content">
-          <h3>Higher Secondary Certificate (HSC)</h3>
-          <p class="institution">Little Flower Matriculation Higher Secondary School</p>
-          <p class="duration">2016 - 2018</p>
-          <p class="details">Percentage: 80%</p>
-          <!-- Donut chart for HSC -->
-          <!-- <canvas id="hscChart"></canvas> -->
-        </div>
+      <div class="timeline-content" style="flex: 1;">
+        <h3>Bachelor of Engineering in Electronics and Communication</h3>
+        <p class="institution">Nellai College of Engineering ( Anna University )</p>
+        <p class="duration">2018 - 2022</p>
+        <p class="details">CGPA: 7.8/10</p>
       </div>
-  
-      <!-- SSLC Timeline Card -->
-      <div class="timeline-card">
-        <div class="timeline-icon">
-          <i class="fas fa-book"></i>
-        </div>
-        <div class="timeline-content">
-          <h3>Secondary School Leaving Certificate (SSLC)</h3>
-          <p class="institution">Ideal Matriculation School</p>
-          <p class="duration">2015 - 2016</p>
-          <p class="details">Percentage: 93.6%</p>
-          <!-- Donut chart for SSLC -->
-          <!-- <canvas id="sslcChart"></canvas> -->
-        </div>
+      <div class="chart" style="width: 180px;">
+        <canvas id="beChart"></canvas>
       </div>
     </div>
-  </section>
-  
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  
-
-
-
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-<section style="color: white;" id="education" class="container my-5">
-    <h2 class="text-center mb-4">Education</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Bachelor of Engineering in Electronics and Communication</h4>
-        <p>Nellai College of Engineering | 2018 - 2022 | CGPA: 7.8/10</p>
+    <!-- HSC Timeline Card -->
+    <div class="timeline-card" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="timeline-icon">
+        <i class="fas fa-school"></i>
       </div>
-      <div class="timeline-item">
-        <h4>Higher Secondary Certificate (HSC)</h4>
-        <p>Little Flower Matriculation Higher Secondary School | 2016 - 2018 | 80%</p>
+      <div class="timeline-content" style="flex: 1;">
+        <h3>Higher Secondary Certificate (HSC)</h3>
+        <p class="institution">Little Flower Matriculation Higher Secondary School</p>
+        <p class="duration">2016 - 2018</p>
+        <p class="details">Percentage: 80%</p>
       </div>
-      <div class="timeline-item">
-        <h4>Secondary School Leaving Certificate (SSLC)</h4>
-        <p>Ideal Matriculation School | 2015 - 2016 | 93.6%</p>
+      <div class="chart" style="width: 180px;">
+        <canvas id="hscChart"></canvas>
       </div>
     </div>
-  </section>
 
-  <script>
-    gsap.from(".timeline-item", {
-      opacity: 0,
-      y: 30,
-      duration: 1,
-      stagger: 0.5
+    <!-- SSLC Timeline Card -->
+    <div class="timeline-card" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="timeline-icon">
+        <i class="fas fa-book"></i>
+      </div>
+      <div class="timeline-content" style="flex: 1;">
+        <h3>Secondary School Leaving Certificate (SSLC)</h3>
+        <p class="institution">Ideal Matriculation School</p>
+        <p class="duration">2015 - 2016</p>
+        <p class="details">Percentage: 93.6%</p>
+      </div>
+      <div class="chart" style="width: 180px;">
+        <canvas id="sslcChart"></canvas>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Function to create a donut chart
+  function createDonutChart(elementId, label, percentage) {
+    const ctx = document.getElementById(elementId).getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Achieved', 'Remaining'],
+        datasets: [
+          {
+            label: label,
+            data: [percentage, 100 - percentage],
+            backgroundColor: ['rgba(75, 192, 192, 0.7)', 'rgba(192, 192, 192, 0.5)'],
+            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(192, 192, 192, 1)'],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return `${context.label}: ${context.raw}%`;
+              },
+            },
+          },
+        },
+      },
     });
-  </script>
-   -->
+  }
+
+  // Initialize charts after the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    createDonutChart('beChart', 'Bachelor of Engineering', 78);
+    createDonutChart('hscChart', 'Higher Secondary Certificate', 80);
+    createDonutChart('sslcChart', 'Secondary School Leaving Certificate', 93.6);
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  // Create Donut Charts
+  function createDonutChart(elementId, label, percentage) {
+    const ctx = document.getElementById(elementId).getContext("2d");
+    new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["Achieved", "Remaining"],
+        datasets: [
+          {
+            label: label,
+            data: [percentage, 100 - percentage],
+            backgroundColor: ["rgba(75, 192, 192, 0.7)", "rgba(192, 192, 192, 0.5)"],
+            borderColor: ["rgba(75, 192, 192, 1)", "rgba(192, 192, 192, 1)"],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "bottom",
+          },
+          tooltip: {
+            callbacks: {
+              label: (context) => `${context.label}: ${context.raw}%`,
+            },
+          },
+        },
+      },
+    });
+  }
+
+  // Initialize Donut Charts
+  createDonutChart("beChart", "Bachelor of Engineering", 78);
+  createDonutChart("hscChart", "Higher Secondary Certificate", 80);
+  createDonutChart("sslcChart", "Secondary School Leaving Certificate", 93.6);
+
+  // GSAP Animation
+  gsap.from(".timeline-card", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.3,
+  });
+</script>

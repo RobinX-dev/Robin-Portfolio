@@ -11,6 +11,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { ContactComponent } from './contact/contact.component';
 import { CertificationComponent } from './certification/certification.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ScrollVisibilityDirective } from './scroll-visibility.directive';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
     ResumeComponent,
     ContactComponent,
     CertificationComponent,
+    ScrollVisibilityDirective,
   ],
   imports: [
     BrowserModule,
