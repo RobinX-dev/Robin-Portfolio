@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CertificationComponent } from './certification/certification.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ScrollVisibilityDirective } from './scroll-visibility.directive';
+import { VantaelementComponent } from './vantaelement/vantaelement.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
     ContactComponent,
     CertificationComponent,
     ScrollVisibilityDirective,
+    VantaelementComponent,
   ],
   imports: [
     BrowserModule,
